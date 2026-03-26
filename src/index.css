@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/700.css';
+@import '@fontsource/cormorant-garamond/400-italic.css';
+@import '@fontsource/cormorant-garamond/600-italic.css';
+@import '@fontsource/fira-code/400.css';
+
+/* ─── Design Tokens ─── */
+:root {
+  --vv-vellum:     #F5EFE0;
+  --vv-terracotta: #B85C38;
+  --vv-ink:        #2C2416;
+  --vv-muted:      #7A6A58;
+  --vv-sand:       #E8DFC8;
+  --vv-cream:      #FBF8F2;
+  --vv-accent-dim: #8B3E22;
+
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-mono:  'Fira Code', 'Courier New', monospace;
+
+  --nav-height: 4rem;
+  --content-max: 72ch;
+  --wide-max: 90rem;
+
+  /* Tailwind CSS v4 theme tokens */
+  --color-vellum:     var(--vv-vellum);
+  --color-terracotta: var(--vv-terracotta);
+  --color-ink:        var(--vv-ink);
+  --color-muted:      var(--vv-muted);
+  --color-sand:       var(--vv-sand);
+  --color-cream:      var(--vv-cream);
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--vv-vellum);
+  color: var(--vv-ink);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--vv-terracotta);
+  color: var(--vv-vellum);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--vv-sand); }
+::-webkit-scrollbar-thumb {
+  background: var(--vv-muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--vv-terracotta); }
+
+/* ─── Focus ─── */
+:focus-visible {
+  outline: 2px solid var(--vv-terracotta);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Links ─── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Utilities ─── */
+.font-serif  { font-family: var(--font-serif); }
+.font-mono   { font-family: var(--font-mono); }
+
+.text-ink        { color: var(--vv-ink); }
+.text-muted      { color: var(--vv-muted); }
+.text-terracotta { color: var(--vv-terracotta); }
+
+.bg-vellum     { background-color: var(--vv-vellum); }
+.bg-sand       { background-color: var(--vv-sand); }
+.bg-cream      { background-color: var(--vv-cream); }
+.bg-terracotta { background-color: var(--vv-terracotta); }
+
+/* ─── Reading progress bar ─── */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--vv-terracotta);
+  z-index: 100;
+  transition: width 0.1s ease;
+}
+
+/* ─── Divider ─── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--vv-sand);
+  margin: 2rem 0;
+}
+
+/* ─── Anim: fade-up ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

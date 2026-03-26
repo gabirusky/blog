@@ -1,0 +1,169 @@
+/* ─── Prose: tipografia dual-escala ─── */
+
+.prose {
+  font-family: var(--font-serif);
+  color: var(--vv-ink);
+  font-size: 1.05rem;
+  max-width: var(--content-max);
+}
+
+/* Parágrafos */
+.prose p {
+  margin-bottom: 1.4em;
+}
+
+/* Headings */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--vv-ink);
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.prose h1 { font-size: 2.2rem; }
+.prose h2 { font-size: 1.6rem; border-bottom: 1px solid var(--vv-sand); padding-bottom: 0.3em; }
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.05rem; }
+
+/* Links em prose */
+.prose a {
+  color: var(--vv-terracotta);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.prose a:hover {
+  border-bottom-color: var(--vv-terracotta);
+}
+
+/* Listas */
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.4em;
+}
+.prose li {
+  margin-bottom: 0.4em;
+}
+
+/* Blockquote */
+.prose blockquote {
+  border-left: 3px solid var(--vv-terracotta);
+  padding: 0.5em 1.2em;
+  margin: 2em 0;
+  color: var(--vv-muted);
+  font-style: italic;
+  font-size: 1.08rem;
+  background-color: color-mix(in srgb, var(--vv-sand) 40%, transparent);
+}
+.prose blockquote p { margin-bottom: 0; }
+
+/* Código inline */
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background-color: var(--vv-sand);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  color: var(--vv-terracotta);
+}
+
+/* Bloco de código */
+.prose pre {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  background-color: var(--vv-ink);
+  color: var(--vv-vellum);
+  padding: 1.2em 1.5em;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 2em 0;
+  line-height: 1.7;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Tabelas */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 0.92rem;
+}
+.prose th {
+  text-align: left;
+  border-bottom: 2px solid var(--vv-sand);
+  padding: 0.5em 0.8em;
+  font-weight: 600;
+  color: var(--vv-muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+.prose td {
+  padding: 0.5em 0.8em;
+  border-bottom: 1px solid var(--vv-sand);
+}
+
+/* Imagens */
+.prose img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin: 2em 0;
+}
+
+/* Footnotes */
+.prose .footnotes {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--vv-sand);
+  font-size: 0.85rem;
+  color: var(--vv-muted);
+}
+.prose .footnotes ol {
+  padding-left: 1.2em;
+}
+.prose sup a {
+  color: var(--vv-terracotta);
+  font-size: 0.75em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ─── Acadêmico: texto justificado, leading apertado ─── */
+.prose-academic {
+  line-height: 1.65;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.prose-academic p + p {
+  text-indent: 1.5em;
+  margin-top: 0;
+}
+.prose-academic p:first-of-type {
+  text-indent: 0;
+}
+
+/* ─── Casual: alinhado à esquerda, leading aberto ─── */
+.prose-casual {
+  line-height: 1.85;
+  text-align: left;
+}
+.prose-casual p {
+  margin-bottom: 1.6em;
+}
+
+/* ─── Híbrido: intermediário ─── */
+.prose-hybrid {
+  line-height: 1.75;
+  text-align: left;
+}
