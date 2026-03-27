@@ -9,6 +9,7 @@
 
 /* ─── Design Tokens ─── */
 :root {
+  color-scheme: light only;
   --vv-vellum:     #F5EFE0;
   --vv-terracotta: #B85C38;
   --vv-ink:        #2C2416;
