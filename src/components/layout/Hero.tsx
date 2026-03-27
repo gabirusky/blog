@@ -14,44 +14,30 @@ export default function Hero({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '2rem',
+        gap: '2.5rem',
         textAlign: 'center',
         maxWidth: 'var(--wide-max)',
         margin: '0 auto',
       }}
     >
-      {/* Foto de perfil */}
-      <div
-        style={{
-          position: 'relative',
-        }}
-      >
-        <div
+      {/* Imagem de perfil — sem fundo */}
+      <div style={{ position: 'relative', display: 'inline-block' }}>
+        <img
+          src="/profile.png"
+          alt="Gabirusky — autor do blog"
           style={{
-            width: 'clamp(120px, 18vw, 180px)',
-            height: 'clamp(120px, 18vw, 180px)',
-            borderRadius: '50%',
-            overflow: 'hidden',
-            border: '3px solid var(--vv-sand)',
-            boxShadow: '0 8px 32px rgba(44, 36, 22, 0.12)',
+            width: 'clamp(220px, 30vw, 340px)',
+            height: 'auto',
+            display: 'block',
           }}
-        >
-          <img
-            src="/profile.png"
-            alt="Gabirusky — autor do blog"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        </div>
-        {/* Acento decorativo */}
+        />
+
+        {/* Ponto decorativo à direita */}
         <div
           style={{
             position: 'absolute',
-            bottom: '-4px',
-            right: '-4px',
+            bottom: '8px',
+            right: '-16px',
             width: '24px',
             height: '24px',
             borderRadius: '50%',

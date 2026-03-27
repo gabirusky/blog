@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import type { ContentType, Tone } from '../../lib/content'
-import { typeLabels, toneLabels, domainLabels } from '../../lib/content'
+import type { ContentType } from '../../lib/content'
+import { typeLabels, domainLabels } from '../../lib/content'
 
 interface FilterBarProps {
   onFilterChange: (filters: {
     type: ContentType | null
-    tone: Tone | null
     domain: string | null
   }) => void
   availableDomains: string[]
@@ -16,22 +15,16 @@ export default function FilterBar({
   availableDomains,
 }: FilterBarProps) {
   const [activeType, setActiveType] = useState<ContentType | null>(null)
-  const [activeTone, setActiveTone] = useState<Tone | null>(null)
   const [activeDomain, setActiveDomain] = useState<string | null>(null)
 
   function handleType(t: ContentType | null) {
     setActiveType(t)
-    onFilterChange({ type: t, tone: activeTone, domain: activeDomain })
-  }
-
-  function handleTone(t: Tone | null) {
-    setActiveTone(t)
-    onFilterChange({ type: activeType, tone: t, domain: activeDomain })
+    onFilterChange({ type: t, domain: activeDomain })
   }
 
   function handleDomain(d: string | null) {
     setActiveDomain(d)
-    onFilterChange({ type: activeType, tone: activeTone, domain: d })
+    onFilterChange({ type: activeType, domain: d })
   }
 
   const pillStyle = (active: boolean) =>
@@ -91,34 +84,6 @@ export default function FilterBar({
         ))}
       </div>
 
-      {/* Tons */}
-      <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', alignItems: 'center' }}>
-        <span
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.6rem',
-            color: 'var(--vv-muted)',
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            marginRight: '0.3rem',
-            minWidth: '3rem',
-          }}
-        >
-          tom
-        </span>
-        <button style={pillStyle(!activeTone)} onClick={() => handleTone(null)}>
-          todos
-        </button>
-        {(Object.keys(toneLabels) as Tone[]).map((t) => (
-          <button
-            key={t}
-            style={pillStyle(activeTone === t)}
-            onClick={() => handleTone(t)}
-          >
-            {toneLabels[t]}
-          </button>
-        ))}
-      </div>
 
       {/* Domínios */}
       {availableDomains.length > 0 && (

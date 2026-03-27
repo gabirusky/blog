@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import type { Article } from '../lib/content'
 import { typeLabels, formatDate } from '../lib/content'
 import { Link } from 'react-router-dom'
-import ToneTag from '../components/taxonomy/ToneTag'
+
 
 // Mesmo sample data — futuramente virá do motor de conteúdo
 const sampleArticles: Article[] = [
@@ -11,7 +11,6 @@ const sampleArticles: Article[] = [
     title: 'Nota sobre escrever apesar de tudo',
     date: '2025-10-02',
     type: 'marginalia',
-    tone: 'casual',
     domain: ['personal', 'language-writing'],
     abstract: 'Uma frase de Clarice me encontrou no ônibus.',
     readingTime: 1,
@@ -21,7 +20,6 @@ const sampleArticles: Article[] = [
     title: 'O que não coube nas notas de rodapé',
     date: '2025-09-28',
     type: 'dispatch',
-    tone: 'casual',
     domain: ['technology-ai', 'personal'],
     abstract: 'As dúvidas que ficaram de fora do ensaio sobre IA militar.',
     readingTime: 5,
@@ -31,7 +29,6 @@ const sampleArticles: Article[] = [
     title: 'O Campo de Batalha Algorítmico',
     date: '2025-09-14',
     type: 'essay',
-    tone: 'academic',
     domain: ['technology-ai', 'surveillance-power'],
     abstract: 'IA em operações militares: da Palantir ao Project Maven.',
     readingTime: 14,
@@ -41,7 +38,6 @@ const sampleArticles: Article[] = [
     title: 'O Trabalho Invisível do reCAPTCHA',
     date: '2025-08-20',
     type: 'essay',
-    tone: 'academic',
     domain: ['labor-ethics', 'technology-ai'],
     abstract: 'Como o reCAPTCHA transforma verificação em trabalho.',
     readingTime: 12,
@@ -51,7 +47,6 @@ const sampleArticles: Article[] = [
     title: 'Hofstadter e as máquinas que (não) pensam',
     date: '2025-07-15',
     type: 'essay',
-    tone: 'hybrid',
     domain: ['philosophy-of-mind', 'technology-ai'],
     abstract: 'GEB à luz dos LLMs contemporâneos.',
     readingTime: 10,
@@ -61,7 +56,6 @@ const sampleArticles: Article[] = [
     title: 'Tecnofeudalismo: o capital fugiu do mercado',
     date: '2025-06-10',
     type: 'dispatch',
-    tone: 'hybrid',
     domain: ['data-society', 'labor-ethics'],
     abstract: 'Varoufakis argumenta que não vivemos mais no capitalismo.',
     readingTime: 6,
@@ -207,10 +201,7 @@ export default function ArchivePage() {
                 {a.title}
               </span>
 
-              {/* Tom */}
-              <span style={{ flexShrink: 0 }}>
-                <ToneTag tone={a.tone} />
-              </span>
+
             </Link>
           ))}
         </div>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Article } from '../../lib/content'
 import { typeLabels, formatDate } from '../../lib/content'
-import ToneTag from '../taxonomy/ToneTag'
 import DomainBadge from '../taxonomy/DomainBadge'
 
 interface ArticleCardProps {
@@ -109,7 +108,6 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             alignItems: 'center',
           }}
         >
-          <ToneTag tone={article.tone} />
           {article.domain.map((d) => (
             <DomainBadge key={d} domain={d} />
           ))}

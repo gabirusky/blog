@@ -32,7 +32,7 @@ export default function Footer() {
           letterSpacing: '0.06em',
         }}
       >
-        © {year} gabirusky · construído com café e indignação
+        © {year} gabirusky · construído com react + shadcn/ui + vite + github pages
       </p>
     </footer>
   )

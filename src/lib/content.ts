@@ -1,14 +1,12 @@
 // Motor de conteúdo — tipos e helpers
 
 export type ContentType = 'essay' | 'dispatch' | 'marginalia'
-export type Tone = 'academic' | 'hybrid' | 'casual'
 
 export interface Article {
   slug: string
   title: string
   date: string
   type: ContentType
-  tone: Tone
   domain: string[]
   abstract: string
   draft?: boolean
@@ -18,12 +16,6 @@ export interface Article {
   heroAlt?: string
   companionSlug?: string
   companionLabel?: string
-}
-
-export const toneLabels: Record<Tone, string> = {
-  academic: 'Rigorosamente referenciado',
-  hybrid: 'Informado por pesquisa',
-  casual: 'Despacho pessoal',
 }
 
 export const typeLabels: Record<ContentType, string> = {
