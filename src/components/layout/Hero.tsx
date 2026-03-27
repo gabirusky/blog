@@ -23,7 +23,7 @@ export default function Hero({
       {/* Imagem de perfil — sem fundo */}
       <div style={{ position: 'relative', display: 'inline-block' }}>
         <img
-          src={`${import.meta.env.BASE_URL}profile.png`}
+          src="/blog/profile.png"
           alt="Gabirusky — autor do blog"
           style={{
             width: 'clamp(220px, 30vw, 340px)',
