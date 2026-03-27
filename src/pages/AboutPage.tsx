@@ -20,7 +20,7 @@ export default function AboutPage() {
           }}
         >
           <img
-            src={`${import.meta.env.BASE_URL}profile.png`}
+            src={`${import.meta.env.BASE_URL}/profile.png`}
             alt="Gabirusky"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
