@@ -34,6 +34,7 @@ export default function Hero({
 
         {/* Ponto decorativo à direita */}
         <div
+          id="hero-dot"
           style={{
             position: 'absolute',
             bottom: '8px',

@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect, useMemo } from 'react'
 import type { Article } from '../lib/content'
-import { typeLabels, formatDate, domainLabels } from '../lib/content'
+import { typeLabels, formatDate } from '../lib/content'
 import DomainBadge from '../components/taxonomy/DomainBadge'
 import '../styles/prose.css'
 
