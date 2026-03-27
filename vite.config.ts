@@ -8,7 +8,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 export default defineConfig({
-  base: '/blog/',
+  base: '/blog',
   plugins: [
     mdx({
       remarkPlugins: [
