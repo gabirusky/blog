@@ -20,7 +20,7 @@ export default function AboutPage() {
           }}
         >
           <img
-            src={`profile blog.png`}
+            src={`profile.png`}
             alt="Gabirusky"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
