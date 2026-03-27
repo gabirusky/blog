@@ -8,10 +8,14 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 export default defineConfig({
-  base: '/',
+  base: '/blog/',
   plugins: [
     mdx({
-      remarkPlugins: [remarkGfm, [remarkFootnotes, { inlineNotes: true }]],
+      remarkPlugins: [
+        remarkGfm,
+        // @ts-ignore — remark-footnotes bundles its own vfile version (type conflict)
+        [remarkFootnotes, { inlineNotes: true }],
+      ],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
     }),
     react(),

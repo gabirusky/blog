@@ -57,7 +57,7 @@ export default function AboutPage() {
 
         <p>
           Escrevo sobre inteligência artificial, ética do trabalho digital, vigilância,
-          filosofia da mente — e, às vezes, sobre nada que seja publicável. São ensaios
+          filosofia da mente e, às vezes, sobre nada que seja publicável. São ensaios
           longos, despachos curtos e marginálias que mal dão um parágrafo.
         </p>
 
